@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginx-proxy-manager
+    restart: unless-stopped
+    environment:
+      - PUID=1005
+      - PGID=1005
+    networks:
+      - core_network
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ${CONFIG_ROOT}/nginx-proxy-manager/data:/data
+      - ${CONFIG_ROOT}/nginx-proxy-manager/letsencrypt:/etc/letsencrypt
+networks:
+  core_network:
+    name: core_network
