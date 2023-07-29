@@ -12,10 +12,10 @@ services:
       - ${CONFIG_ROOT}/homepage/config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
-      - core_network
+      - nginx_network
     restart: unless-stopped
 
 networks:
-  core_network:
-    name: core_network
+  nginx_network:
+    name: nginx_network
     external: true
