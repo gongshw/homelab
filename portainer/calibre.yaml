@@ -35,10 +35,10 @@ services:
     ports:
       - 8083:8083
     networks:
-      - core_network
+      - nginx_network
     restart: unless-stopped
 
 networks:
-  core_network:
-    name: core_network
+  nginx_network:
+    name: nginx_network
     external: true
