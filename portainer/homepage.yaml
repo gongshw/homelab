@@ -1,0 +1,21 @@
+version: "3.3"
+services:
+  homepage:
+    image: ghcr.io/benphelps/homepage:latest
+    container_name: homepage
+    # ports:
+    #   - 3000:3000
+    # environment:
+    #   - PUID=1005
+    #   - PGID=1005
+    volumes:
+      - ${CONFIG_ROOT}/homepage/config:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - core_network
+    restart: unless-stopped
+
+networks:
+  core_network:
+    name: core_network
+    external: true
