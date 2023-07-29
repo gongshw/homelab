@@ -21,7 +21,7 @@ services:
       - core_network
     restart: unless-stopped
   calibre-web:
-    image: lscr.io/linuxserver/calibre-web:latest
+    image: linuxserver/calibre-web:latest
     container_name: calibre-web
     environment:
       - PUID=1005
