@@ -18,7 +18,7 @@ services:
       # - 8181:8181
       - 8081:8081
     networks:
-      - core_network
+      - nginx_network
     restart: unless-stopped
   calibre-web:
     image: linuxserver/calibre-web:latest
