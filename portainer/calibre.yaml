@@ -1,0 +1,20 @@
+version: "2.1"
+services:
+  calibre:
+    image: linuxserver/calibre:latest
+    container_name: calibre
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1005
+      - PGID=1005
+      - TZ=Asia/Shanghai
+      - PASSWORD= ${PASSWORD}
+      - CLI_ARGS= #optional
+    volumes:
+      - ${CONFIG_ROOT}/calibre/config:/config
+    ports:
+      - 8080:8080
+      - 8181:8181
+      - 8081:8081
+    restart: unless-stopped
