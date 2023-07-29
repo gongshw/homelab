@@ -31,7 +31,7 @@ services:
       - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
     volumes:
       - ${CONFIG_ROOT}/calibre-web/config:/config
-      - "${CONFIG_ROOT}/calibre/config/Calibre Library":/books
+      - "${CONFIG_ROOT}/calibre/config/Calibre Library:/books"
     ports:
       - 8083:8083
     networks:
