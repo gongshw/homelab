@@ -6,6 +6,9 @@ services:
     container_name: heimdall
     volumes:
       - ${CONFIG_ROOT}/heimdall/config:/config
+    environment:
+      - PUID=1005
+      - PGID=1005
     networks:
       - nginx_network
     restart: unless-stopped
