@@ -1,0 +1,15 @@
+
+version: "2.1"
+services:
+  heimdall:
+    image: linuxserver/heimdall:latest
+    container_name: heimdall
+    volumes:
+      - ${CONFIG_ROOT}/heimdall/config:/config
+    networks:
+      - nginx_network
+    restart: unless-stopped
+networks:
+  nginx_network:
+    name: nginx_network
+    external: true
