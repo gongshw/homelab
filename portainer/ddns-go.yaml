@@ -1,0 +1,20 @@
+version: "3.3"
+services:
+  homepage:
+    image: jeessy/ddns-go:latest
+    container_name: ddns-go
+    # ports:
+    #  - 9876:9876  
+    environment:
+      - PUID=1005
+      - PGID=1005
+    volumes:
+      - ${CONFIG_ROOT}/ddns-go:/root
+    networks:
+      - nginx_network
+    restart: unless-stopped
+
+networks:
+  nginx_network:
+    name: nginx_network
+    external: true
