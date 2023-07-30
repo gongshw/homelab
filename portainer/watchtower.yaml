@@ -8,6 +8,14 @@ services:
     environment:
       WATCHTOWER_HTTP_API_METRICS: true
       WATCHTOWER_HTTP_API_TOKEN: ${WATCHTOWER_HTTP_API_TOKEN}
-    ports:
-      - "8080:8080"
+    # ports:
+    #   - "8080:8080"
+    networks:
+      - nginx_network
+
     restart: unless-stopped
+
+networks:
+  nginx_network:
+    name: nginx_network
+    external: true
