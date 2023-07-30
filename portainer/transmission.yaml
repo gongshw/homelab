@@ -1,0 +1,31 @@
+version: '3.5'
+services:
+  transmission:
+    image: linuxserver/transmission
+    container_name: transmission
+    environment:
+      - PUID=1005
+      - PGID=1005
+      - TZ=Asia/Shanghai
+      - TRANSMISSION_WEB_HOME= #optional
+      - USER= #optional
+      - PASS= #optional
+      - WHITELIST= #optional
+      - PEERPORT= #optional
+      - HOST_WHITELIST= #optional
+    volumes:
+      - ${CONFIG_ROOT}/transmission/config:/config
+      - ${CONFIG_ROOT}/transmission/watch:/watch
+      - ${MEDIA_ROOT}/downloads:/downloads
+    networks:
+      - nginx_network    
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+    restart: unless-stopped
+
+networks:
+  nginx_network:
+    name: nginx_network
+    external: true
