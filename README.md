@@ -1,4 +1,4 @@
-# homelab
+# Homelab
 
 ## Infrastracture
 <a href="https://pve.proxmox.com/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/proxmox.png" alt="PVE" height="50">
