@@ -7,6 +7,8 @@
 ## Network
 <a href="portainer/nginx/yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nginx-proxy-manager.png" alt="nginx-proxy-manager" height="50">
 <a href="portainer/ddns-go.yaml"><img src="https://cdn.jsdelivr.net/gh/jeessy2/ddns-go/favicon.ico" alt="ddns-go" height="50">
+<a href="https://adguard.com/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openwrt.png" alt="openwrt" height="50">
+<a href="https://openwrt.org/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png" alt="adguard-home" height="50">
 
 ## Doahboad
 <a href="portainer/homepage.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homepage.png" alt="Homepage" height="50">
