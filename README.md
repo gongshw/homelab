@@ -1,6 +1,6 @@
 # homelab
 
-## Infra
+## Infrastracture
 <a href="https://pve.proxmox.com/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/proxmox.png" alt="PVE" height="50">
 <a href="https://www.portainer.io/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png" alt="portainer" height="50">
 
@@ -9,9 +9,6 @@
 <a href="portainer/ddns-go.yaml"><img src="https://cdn.jsdelivr.net/gh/jeessy2/ddns-go/favicon.ico" alt="ddns-go" height="50">
 <a href="https://adguard.com/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openwrt.png" alt="openwrt" height="50">
 <a href="https://openwrt.org/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png" alt="adguard-home" height="50">
-
-## Doahboad
-<a href="portainer/homepage.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homepage.png" alt="Homepage" height="50">
 
 ## TV & Movie
 <a href="https://jellyfin.org/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyfin.png" alt="jellyfin" height="50">
@@ -31,8 +28,13 @@
 <a href="portainer/calibre.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/calibre.png" alt="calibre" height="50">
 <a href="portainer/calibre.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/calibre-web.png" alt="calibre-web" height="50">
 
-
 ## Download
 <a href="portainer/qbittorrent.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/qbittorrent.png" alt="qBittorrent" height="50">
 <a href="portainer/transmission.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/transmission.png" alt="Transmission" height="50">
 <a href="portainer/aria2.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ariang.png" alt="aria2" height="50">
+
+## Utilities
+<a href="portainer/homepage.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homepage.png" alt="Homepage" height="50">
+<a href="https://code.visualstudio.com/docs/remote/vscode-server"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code.png" alt="VS Code Server" height="50">
+<a href="https://cockpit-project.org/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/cockpit.png" alt="cockpit" height="50">
+
