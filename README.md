@@ -1,5 +1,9 @@
 # Homelab
 
+## Hardware
+
+[TerraMaster D2-310](https://www.terra-master.com/uk/products/homesoho-das/d2-310.html)
+
 ## Infrastracture
 <a href="https://pve.proxmox.com/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/proxmox.png" alt="PVE" height="50">
 <a href="https://www.portainer.io/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png" alt="portainer" height="50">
