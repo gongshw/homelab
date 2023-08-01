@@ -2,6 +2,8 @@
 
 ## Hardware
 
+[Mini PC](https://www.bilibili.com/video/BV1sM4y1b75T/?vd_source=874916bbc9626d1db2f4cd86703d9284) with Intel Gen12 1260P and 32G Memory
+
 [TerraMaster D2-310](https://www.terra-master.com/uk/products/homesoho-das/d2-310.html)
 
 ## Infrastracture
