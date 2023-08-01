@@ -1,7 +1,5 @@
 # homelab
 
-# Stacks
-
 ## Network
 <a href="portainer/nginx/yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nginx-proxy-manager.png" alt="nginx-proxy-manager" height="50">
 <a href="portainer/ddns-go.yaml"><img src="https://cdn.jsdelivr.net/gh/jeessy2/ddns-go/favicon.ico" alt="ddns-go" height="50">
