@@ -1,5 +1,9 @@
 # homelab
 
+## Infra
+<a href="https://pve.proxmox.com/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/proxmox.png" alt="PVE" height="50">
+<a href="https://www.portainer.io/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png" alt="portainer" height="50">
+
 ## Network
 <a href="portainer/nginx/yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nginx-proxy-manager.png" alt="nginx-proxy-manager" height="50">
 <a href="portainer/ddns-go.yaml"><img src="https://cdn.jsdelivr.net/gh/jeessy2/ddns-go/favicon.ico" alt="ddns-go" height="50">
@@ -8,6 +12,7 @@
 <a href="portainer/homepage.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homepage.png" alt="Homepage" height="50">
 
 ## TV & Movie
+<a href="https://jellyfin.org/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyfin.png" alt="jellyfin" height="50">
 <a href="portainer/servarr.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/radarr.png" alt="radarr" height="50">
 <a href="portainer/servarr.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/sonarr.png" alt="sonarr" height="50">
 <a href="portainer/servarr.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jackett.png" alt="jackett" height="50">
@@ -18,6 +23,7 @@
 
 ## Photo
 <a href="portainer/immich.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/immich.png" alt="immich" height="50">
+<a href="https://www.photoprism.app/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/photoprism.png" alt="photoprism" height="50">
 
 ## Ebook
 <a href="portainer/calibre.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/calibre.png" alt="calibre" height="50">
