@@ -9,12 +9,14 @@
 ## Infrastracture
 <a href="https://pve.proxmox.com/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/proxmox.png" alt="PVE" height="50">
 <a href="https://www.portainer.io/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png" alt="portainer" height="50">
+<a href="https://goauthentik.io/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/authentik.png" alt="authentik" height="50">
 
 ## Network
 <a href="portainer/nginx/yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nginx-proxy-manager.png" alt="nginx-proxy-manager" height="50">
 <a href="portainer/ddns-go.yaml"><img src="https://cdn.jsdelivr.net/gh/jeessy2/ddns-go/favicon.ico" alt="ddns-go" height="50">
 <a href="https://adguard.com/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openwrt.png" alt="openwrt" height="50">
 <a href="https://openwrt.org/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png" alt="adguard-home" height="50">
+<a href="https://www.wireguard.com/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/wireguard.png" alt="wireguard" height="50">
 
 ## TV & Movie
 <a href="https://jellyfin.org/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/jellyfin.png" alt="jellyfin" height="50">
