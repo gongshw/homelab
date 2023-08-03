@@ -1,4 +1,4 @@
-// https://github.com/qdm12/ddns-updater/blob/master/docker-compose.yml
+# https://github.com/qdm12/ddns-updater/blob/master/docker-compose.yml
 
 version: "3.7"
 services:
