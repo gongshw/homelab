@@ -17,8 +17,8 @@ services:
       - CONFIG=
       - PERIOD=5m
       - UPDATE_COOLDOWN_PERIOD=5m
-      - PUBLICIP_FETCHERS=all
-      - PUBLICIP_HTTP_PROVIDERS=all
+      - PUBLICIP_FETCHERS=http
+      - PUBLICIP_HTTP_PROVIDERS=https://4.ipw.cn
       - PUBLICIPV4_HTTP_PROVIDERS=https://4.ipw.cn
       - PUBLICIPV6_HTTP_PROVIDERS=https://6.ipw.cn
       - PUBLICIP_DNS_PROVIDERS=all
