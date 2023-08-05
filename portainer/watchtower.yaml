@@ -8,6 +8,7 @@ services:
     environment:
       WATCHTOWER_HTTP_API_METRICS: true
       WATCHTOWER_HTTP_API_TOKEN: ${WATCHTOWER_HTTP_API_TOKEN}
+      WATCHTOWER_NOTIFICATION_URL: ${WATCHTOWER_NOTIFICATION_URL}
     # ports:
     #   - "8080:8080"
     networks:
