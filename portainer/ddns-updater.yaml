@@ -36,7 +36,7 @@ services:
       # Other
       - LOG_LEVEL=info
       - LOG_CALLER=hidden
-      - SHOUTRRR_ADDRESSES=
+      - SHOUTRRR_ADDRESSES=${SHOUTRRR_ADDRESSES}
     restart: always
 
 
