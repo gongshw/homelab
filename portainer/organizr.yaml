@@ -1,0 +1,24 @@
+version: '3.5'
+services:
+  organizr:
+    container_name: organizr
+    image: organizr/organizr
+    environment:
+      - PUID=1005
+      - PGID=1005
+    volumes:
+      - ${CONFIG_ROOT}/organizr/config:/config
+    # ports:
+    #   - 80:80
+    networks:
+      - nginx_network      
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+
+networks:
+  nginx_network:
+    name: nginx_network
+    external: true
