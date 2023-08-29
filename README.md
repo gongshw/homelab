@@ -35,6 +35,10 @@
 <a href="portainer/immich.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/immich.png" alt="immich" height="50">
 <a href="https://www.photoprism.app/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/photoprism.png" alt="photoprism" height="50">
 
+# RSS
+<a href="portainer/freshrss.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/freshrss.png" alt="freshrss" height="50">
+<a href="portainer/rsshub.yaml"><img src="https://docs.rsshub.app/img/logo.png" alt="rsshub" height="50">
+
 ## Ebook
 <a href="portainer/calibre.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/calibre.png" alt="calibre" height="50">
 <a href="portainer/calibre.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/calibre-web.png" alt="calibre-web" height="50">
