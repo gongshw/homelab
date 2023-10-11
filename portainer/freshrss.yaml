@@ -25,6 +25,7 @@ services:
       TZ: Asia/Shanghai
       CRON_MIN: '3,33'
       TRUSTED_PROXY: 172.16.0.1/12 192.168.0.1/16
+      PROXY_URI: ${PROXY_URI}
     networks:
       - nginx_network
       
