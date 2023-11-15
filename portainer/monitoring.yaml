@@ -7,6 +7,10 @@ services:
     networks:
       - nginx_network
     restart: unless-stopped
+    volumes:
+      - ${CONFIG_ROOT}/prometheus/config:/etc/prometheus
+      - ${CONFIG_ROOT}/prometheus/data:/prometheus
+
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
     container_name: node_exporter
