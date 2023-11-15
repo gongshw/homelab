@@ -3,7 +3,7 @@ version: "2.4"
 services:
   prometheus:
     image: prom/prometheus
-    container_name: freshrss
+    container_name: prometheus
     networks:
       - nginx_network
     restart: unless-stopped
