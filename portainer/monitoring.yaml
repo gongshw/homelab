@@ -8,7 +8,6 @@ services:
       - nginx_network
     restart: unless-stopped
   node_exporter:
-    image: prom/prometheus
     image: quay.io/prometheus/node-exporter:latest
     container_name: node_exporter
     command:
