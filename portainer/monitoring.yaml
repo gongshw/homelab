@@ -1,0 +1,27 @@
+version: "2.4"
+
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: freshrss
+    networks:
+      - nginx_network
+    restart: unless-stopped
+  node_exporter:
+    image: prom/prometheus
+    image: quay.io/prometheus/node-exporter:latest
+    container_name: node_exporter
+    command:
+      - '--path.rootfs=/host'
+    # network_mode: host
+    networks:
+      - nginx_network
+    pid: host
+    restart: unless-stopped
+    volumes:
+      - '/:/host:ro,rslave'
+
+networks:
+  nginx_network:
+    name: nginx_network
+    external: true
