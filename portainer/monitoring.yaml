@@ -4,6 +4,10 @@ services:
   prometheus:
     image: prom/prometheus
     container_name: prometheus
+    environment:
+      - PUID=1005
+      - PGID=1005
+      - TZ=Asia/Shanghai
     networks:
       - nginx_network
     restart: unless-stopped
@@ -14,6 +18,10 @@ services:
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
     container_name: node_exporter
+    environment:
+      - PUID=1005
+      - PGID=1005
+      - TZ=Asia/Shanghai
     command:
       - '--path.rootfs=/host'
     # network_mode: host
