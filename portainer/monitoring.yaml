@@ -4,6 +4,7 @@ services:
   prometheus:
     image: prom/prometheus
     container_name: prometheus
+    user: 1005:1005
     environment:
       - PUID=1005
       - PGID=1005
