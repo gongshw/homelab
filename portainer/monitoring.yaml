@@ -30,6 +30,19 @@ services:
     restart: unless-stopped
     volumes:
       - ${CONFIG_ROOT}/grafana/data:/var/lib/grafana
+  pve-exporter:
+    image: prompve/prometheus-pve-exporter
+    container_name: pve-exporter
+    environment:
+      - PUID=1005
+      - PGID=1005
+      - TZ=Asia/Shanghai
+    networks:
+      - nginx_network
+    restart: unless-stopped
+    volumes:
+      - ${CONFIG_ROOT}/prometheus/config/pve.yml:/etc/prometheus/pve.yml
+      - '/:/host:ro,rslave'
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
     container_name: node_exporter
