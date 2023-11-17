@@ -59,6 +59,20 @@ services:
     restart: unless-stopped
     volumes:
       - '/:/host:ro,rslave'
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    environment:
+      - PUID=1005
+      - PGID=1005
+      - TZ=Asia/Shanghai
+    networks:
+      - nginx_network
+    volumes:
+    - /:/rootfs:ro
+    - /var/run:/var/run:rw
+    - /sys:/sys:ro
+    - /var/lib/docker/:/var/lib/docker:ro
 
 networks:
   nginx_network:
