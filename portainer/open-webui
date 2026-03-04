@@ -1,0 +1,26 @@
+version: '3.5'
+services:
+  open-webui:
+    container_name: open-webui
+    image: ghcr.io/open-webui/open-webui:main
+    environment:
+      - PUID=1005
+      - PGID=1005
+      - TZ=Asia/Shanghai
+      - OLLAMA_BASE_URL=http://ollama.halfsugar.tech:11434
+    volumes:
+      - ${CONFIG_ROOT}/open-webui/data:/app/backend/data
+    ports:
+      - 8080:8080
+    networks:
+      - nginx_network      
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+
+networks:
+  nginx_network:
+    name: nginx_network
+    external: true
