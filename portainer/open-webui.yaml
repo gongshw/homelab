@@ -7,7 +7,7 @@ services:
       - PUID=1005
       - PGID=1005
       - TZ=Asia/Shanghai
-      - OLLAMA_BASE_URL=http://ollama.halfsugar.tech:11434
+      - OLLAMA_BASE_URL=http://ollama.halfsugar.tech
     volumes:
       - ${CONFIG_ROOT}/open-webui/data:/app/backend/data
     ports:
