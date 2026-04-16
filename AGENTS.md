@@ -29,6 +29,7 @@ Media services consistently use PUID=1005 and PGID=1005. Ensure these IDs exist 
 - **RSS**: `freshrss.yaml`, `rsshub.yaml`
 - **Monitoring**: `monitoring.yaml` (prometheus, grafana, exporters)
 - **Network**: `nginx.yaml`, `ddns-updater.yaml`, `ddns-go.yaml`
+- **Server management**: `termix.yaml` (SSH terminal, file manager, Docker management)
 
 ## Timezone
 
