@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  termix:
+    image: ghcr.io/lukegus/termix:latest
+    container_name: termix
+    restart: unless-stopped
+    environment:
+      - PUID=1005
+      - PGID=1005
+      - TZ=Asia/Shanghai
+      - PORT=8080
+    # ports:
+    #   - "8080:8080"
+    volumes:
+      - ${CONFIG_ROOT}/termix/data:/app/data
+    networks:
+      - nginx_network
+
+networks:
+  nginx_network:
+    name: nginx_network
+    external: true
