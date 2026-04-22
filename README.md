@@ -9,6 +9,7 @@
 ## Virtualization
 <a href="https://pve.proxmox.com/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/proxmox.png" alt="PVE" height="50">
 <a href="https://www.portainer.io/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/portainer.png" alt="portainer" height="50">
+<a href="portainer/dockhand.yaml"><img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/dockhand.png" alt="Dockhand" height="50">
 <a href="portainer/watchtower.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/watchtower.png" alt="watchtower" height="50">
 
 ## Authentication

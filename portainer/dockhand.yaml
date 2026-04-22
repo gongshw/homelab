@@ -1,0 +1,18 @@
+version: "3"
+services:
+  dockhand:
+    image: fnsys/dockhand:latest
+    container_name: dockhand
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${CONFIG_ROOT}/dockhand/data:/app/data
+    networks:
+      - nginx_network
+
+networks:
+  nginx_network:
+    name: nginx_network
+    external: true
