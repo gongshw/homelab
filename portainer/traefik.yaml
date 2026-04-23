@@ -5,8 +5,7 @@ services:
     container_name: traefik
     restart: unless-stopped
     environment:
-      - CF_API_EMAIL=${CF_API_EMAIL}
-      - CF_API_KEY=${CF_API_KEY}
+      - CF_DNS_API_TOKEN=${CF_DNS_API_TOKEN}
     command:
       - "--api.insecure=true"
       - "--providers.docker=true"
