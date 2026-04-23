@@ -17,6 +17,7 @@
 
 ## Network
 <a href="portainer/nginx/yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nginx-proxy-manager.png" alt="nginx-proxy-manager" height="50">
+<a href="portainer/traefik.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/traefik.png" alt="traefik" height="50">
 <a href="portainer/ddns-updater.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ddns-updater.png" alt="ddns-updater" height="50">
 <a href="https://adguard.com/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openwrt.png" alt="openwrt" height="50">
 <a href="https://openwrt.org/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png" alt="adguard-home" height="50">
