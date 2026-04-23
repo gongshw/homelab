@@ -25,9 +25,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ${CONFIG_ROOT}/traefik/certs:/certs
     networks:
-      - nginx_network
+      - traefik_network
 
 networks:
-  nginx_network:
-    name: nginx_network
-    external: true
+  traefik_network:
+    name: traefik_network
