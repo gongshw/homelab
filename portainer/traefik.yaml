@@ -15,10 +15,10 @@ services:
       - "--certificatesresolvers.letsencrypt.acme.email=${ACME_EMAIL}"
       - "--certificatesresolvers.letsencrypt.acme.storage=/certs/acme.json"
       - "--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare"
-    ports:
-      - "8000:8000"
-      - "8443:8443"
-      - "8080:8080"
+    # ports:
+    #   - "8000:8000"
+    #   - "8443:8443"
+    #   - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ${CONFIG_ROOT}/traefik/certs:/certs
