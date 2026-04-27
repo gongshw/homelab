@@ -9,10 +9,10 @@ services:
       - PGID=1005
     networks:
       - nginx_network
-    ports:
-      - '80:80'
-      - '81:81'
-      - '443:443'
+    # ports:
+    #   - '80:80'
+    #   - '81:81'
+    #   - '443:443'
     volumes:
       - ${CONFIG_ROOT}/nginx-proxy-manager/data:/data
       - ${CONFIG_ROOT}/nginx-proxy-manager/letsencrypt:/etc/letsencrypt
