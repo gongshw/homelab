@@ -13,6 +13,7 @@ services:
       - ${CONFIG_ROOT}/homepage/config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
+      - nginx_network
       - traefik_network
     labels:
       - "traefik.enable=true"
@@ -23,5 +24,8 @@ services:
     restart: unless-stopped
 
 networks:
+  nginx_network:
+    name: nginx_network
+    external: true
   traefik_network:
     name: traefik_network
