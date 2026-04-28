@@ -11,6 +11,13 @@ services:
       - TZ=Asia/Shanghai
     networks:
       - nginx_network
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.prometheus.rule=Host(`prometheus.halfsugar.tech`)"
+      - "traefik.http.routers.prometheus.entrypoints=websecure"
+      - "traefik.http.routers.prometheus.tls.certresolver=letsencrypt"
+      - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
     restart: unless-stopped
     volumes:
       - ${CONFIG_ROOT}/prometheus/config:/etc/prometheus
@@ -27,6 +34,13 @@ services:
       - GF_INSTALL_PLUGINS=grafana-clock-panel
     networks:
       - nginx_network
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.grafana.rule=Host(`grafana.halfsugar.tech`)"
+      - "traefik.http.routers.grafana.entrypoints=websecure"
+      - "traefik.http.routers.grafana.tls.certresolver=letsencrypt"
+      - "traefik.http.services.grafana.loadbalancer.server.port=3000"
     restart: unless-stopped
     volumes:
       - ${CONFIG_ROOT}/grafana/data:/var/lib/grafana
@@ -77,4 +91,7 @@ services:
 networks:
   nginx_network:
     name: nginx_network
+    external: true
+  traefik_network:
+    name: traefik_network
     external: true
