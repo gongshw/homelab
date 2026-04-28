@@ -13,10 +13,15 @@ services:
       - ${CONFIG_ROOT}/homepage/config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
-      - nginx_network
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.homepage.rule=Host(`homepage.halfsugar.tech`)"
+      - "traefik.http.routers.homepage.entrypoints=websecure"
+      - "traefik.http.routers.homepage.tls.certresolver=letsencrypt"
+      - "traefik.http.services.homepage.loadbalancer.server.port=3000"
     restart: unless-stopped
 
 networks:
-  nginx_network:
-    name: nginx_network
-    external: true
+  traefik_network:
+    name: traefik_network
