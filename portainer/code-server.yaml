@@ -11,6 +11,7 @@ services:
     volumes:
       - ${CONFIG_ROOT}/code-server/data:/home/coder
       - ${CONFIG_ROOT}/code-server/config:/home/coder/.config
+      - /mnt/docker-compose-data:/mnt/docker-compose-data
     networks:
       - traefik_network
     labels:
