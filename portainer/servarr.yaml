@@ -10,11 +10,16 @@ services:
     volumes:
       - ${CONFIG_ROOT}/radarr/data:/config
       - ${MEDIA_ROOT}:/media
-    ports:
-      - 7878:7878
     restart: unless-stopped
     networks:
       - nginx_network
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.radarr.rule=Host(`radarr.halfsugar.tech`)"
+      - "traefik.http.routers.radarr.entrypoints=websecure"
+      - "traefik.http.routers.radarr.tls.certresolver=letsencrypt"
+      - "traefik.http.services.radarr.loadbalancer.server.port=7878"
   sonarr:
     image: linuxserver/sonarr
     container_name: sonarr
@@ -26,10 +31,15 @@ services:
     volumes:
       - ${CONFIG_ROOT}/sonarr/data:/config
       - ${MEDIA_ROOT}:/media #optional
-    ports:
-      - 8989:8989/tcp # Web UI
     networks:
       - nginx_network
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.sonarr.rule=Host(`sonarr.halfsugar.tech`)"
+      - "traefik.http.routers.sonarr.entrypoints=websecure"
+      - "traefik.http.routers.sonarr.tls.certresolver=letsencrypt"
+      - "traefik.http.services.sonarr.loadbalancer.server.port=8989"
   jackett:
     image: linuxserver/jackett
     container_name: jackett
@@ -126,5 +136,8 @@ services:
 networks:
   nginx_network:
     name: nginx_network
+    external: true
+  traefik_network:
+    name: traefik_network
     external: true
     

@@ -15,8 +15,19 @@ services:
       - ${CONFIG_ROOT}/termix/data:/app/data
     networks:
       - nginx_network
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.termix.rule=Host(`termix.halfsugar.tech`)"
+      - "traefik.http.routers.termix.entrypoints=websecure"
+      - "traefik.http.routers.termix.tls.certresolver=letsencrypt"
+      - "traefik.http.services.termix.loadbalancer.server.port=8080"
+    restart: unless-stopped
 
 networks:
   nginx_network:
     name: nginx_network
+    external: true
+  traefik_network:
+    name: traefik_network
     external: true

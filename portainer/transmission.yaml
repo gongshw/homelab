@@ -18,7 +18,14 @@ services:
       - ${CONFIG_ROOT}/transmission/watch:/watch
       - ${MEDIA_ROOT}/downloads:/downloads
     networks:
-      - nginx_network    
+      - nginx_network
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.transmission.rule=Host(`transmission.halfsugar.tech`)"
+      - "traefik.http.routers.transmission.entrypoints=websecure"
+      - "traefik.http.routers.transmission.tls.certresolver=letsencrypt"
+      - "traefik.http.services.transmission.loadbalancer.server.port=9091"
     ports:
       - 9091:9091
       - 51413:51413
@@ -28,4 +35,7 @@ services:
 networks:
   nginx_network:
     name: nginx_network
+    external: true
+  traefik_network:
+    name: traefik_network
     external: true

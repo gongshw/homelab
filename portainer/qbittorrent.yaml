@@ -12,6 +12,13 @@ services:
       - ${MEDIA_ROOT}/downloads:/downloads
     networks:
       - nginx_network
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.qbittorrent.rule=Host(`qbittorrent.halfsugar.tech`)"
+      - "traefik.http.routers.qbittorrent.entrypoints=websecure"
+      - "traefik.http.routers.qbittorrent.tls.certresolver=letsencrypt"
+      - "traefik.http.services.qbittorrent.loadbalancer.server.port=8080"
     ports:
       - 6881:6881
       - 6881:6881/udp
@@ -20,5 +27,8 @@ services:
 networks:
   nginx_network:
     name: nginx_network
+    external: true
+  traefik_network:
+    name: traefik_network
     external: true
     
