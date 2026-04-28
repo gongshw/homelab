@@ -22,7 +22,6 @@ services:
       - "traefik.http.routers.termix.entrypoints=websecure"
       - "traefik.http.routers.termix.tls.certresolver=letsencrypt"
       - "traefik.http.services.termix.loadbalancer.server.port=8080"
-    restart: unless-stopped
 
 networks:
   nginx_network:
