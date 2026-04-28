@@ -56,7 +56,7 @@
 
 ## Utilities
 <a href="portainer/homepage.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/homepage.png" alt="Homepage" height="50">
-<a href="https://code.visualstudio.com/docs/remote/vscode-server"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code.png" alt="VS Code Server" height="50">
+<a href="portainer/code-server.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/code.png" alt="VS Code Server" height="50">
 <a href="portainer/termix.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/termix.png" alt="Termix" height="50">
 
 
