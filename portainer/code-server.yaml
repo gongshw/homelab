@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  code-server:
+    image: codercom/code-server:latest
+    container_name: code-server
+    restart: unless-stopped
+    environment:
+      - PUID=1005
+      - PGID=1005
+      - TZ=Asia/Shanghai
+    volumes:
+      - ${CONFIG_ROOT}/code-server/data:/home/coder
+      - ${CONFIG_ROOT}/code-server/config:/home/coder/.config
+      - /mnt/docker-compose-data:/mnt/docker-compose-data
+    networks:
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.code-server.rule=Host(`code-server.halfsugar.tech`)"
+      - "traefik.http.routers.code-server.entrypoints=websecure"
+      - "traefik.http.routers.code-server.tls.certresolver=letsencrypt"
+      - "traefik.http.services.code-server.loadbalancer.server.port=8080"
+
+networks:
+  traefik_network:
+    name: traefik_network
+    external: true
