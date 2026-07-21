@@ -4,6 +4,7 @@ services:
     image: ghcr.io/berriai/litellm:latest
     container_name: litellm
     restart: unless-stopped
+    command: ["--config", "/app/config/config.yaml"]
     environment:
       - PUID=1005
       - PGID=1005
