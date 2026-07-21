@@ -9,6 +9,7 @@ services:
       - LITELLM_SALT_KEY=${LITELLM_SALT_KEY}
       - DATABASE_URL=postgresql://litellm:${LITELLM_DB_PASSWORD}@db:5432/litellm
       - STORE_MODEL_IN_DB=True
+      - LITELLM_DROP_PARAMS=True
     volumes:
       - ${CONFIG_ROOT}/litellm:/app/config
     networks:
