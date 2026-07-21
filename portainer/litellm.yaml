@@ -38,6 +38,8 @@ services:
       retries: 10
     volumes:
       - ${CONFIG_ROOT}/litellm/postgres:/var/lib/postgresql/data
+    networks:
+      - traefik_network
 
 networks:
   traefik_network:
