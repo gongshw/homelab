@@ -8,7 +8,6 @@ services:
       - PUID=1005
       - PGID=1005
       - TZ=Asia/Shanghai
-      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
     volumes:
       - ${CONFIG_ROOT}/litellm:/app/config
     networks:
