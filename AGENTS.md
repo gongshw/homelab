@@ -1,36 +1,59 @@
-# Homelab Infrastructure Repository
+# Homelab
 
-## Repository Purpose
+Portainer stack files (Docker Compose) for self-hosted services at `*.halfsugar.tech`.
 
-Portainer stack files (Docker Compose) for deploying self-hosted services on a homelab server.
+## Two reverse proxies
 
-## Environment Variables
+| Proxy | Port | Auth | Network created |
+|-------|------|------|----------------|
+| **Traefik** (v3.6) — primary | 80, 443 | Cloudflare DNS challenge via `CF_DNS_API_TOKEN` | `traefik_network` |
+| Nginx Proxy Manager | 9443 | Let's Encrypt | `nginx_network` |
 
-Required environment variables used across stacks:
-- `CONFIG_ROOT` - Base path for service configuration data
-- `MEDIA_ROOT` - Base path for media files (movies, TV, music)
-- `UPLOAD_LOCATION` - Upload directory for Immich photo service
+Both share both networks. Most services connect to `nginx_network` and `traefik_network` (declared `external: true`).
 
-Some stacks reference `../stack.env` files relative to the YAML location for additional configuration (e.g., Immich uses this for database credentials and API keys).
+## Deployment order
 
-## Deployment Order
+1. `nginx.yaml` — creates `nginx_network`
+2. `traefik.yaml` — needs `nginx_network`, creates `traefik_network`
+3. Everything else
 
-Deploy `portainer/nginx.yaml` first - it creates the `nginx_network` that most other stacks require.
+## Environment variables
 
-## User/Group Permissions
+Required at deploy time (set in Portainer or docker-compose env):
+- `CONFIG_ROOT` — base path for service config data
+- `MEDIA_ROOT` — media files (movies, TV, music)
+- `UPLOAD_LOCATION` — Immich upload directory
+- `CF_DNS_API_TOKEN` — Cloudflare API token for Traefik TLS
+- `ACME_EMAIL` — Let's Encrypt registration email
+- `WATCHTOWER_HTTP_API_TOKEN`, `WATCHTOWER_NOTIFICATION_URL`
 
-Media services consistently use PUID=1005 and PGID=1005. Ensure these IDs exist on the host system and have appropriate permissions on mounted volumes.
+Immich uses `../stack.env` (relative to `portainer/` — sibling of repo root) for DB credentials and API keys. This file is **not in the repo**.
 
-## Service Categories
+## User/group
 
-- **Media automation**: `servarr.yaml` (radarr, sonarr, jackett, bazarr, jellyseerr, prowlarr, lidarr)
-- **Photo management**: `immich.yaml`
-- **Download clients**: `qbittorrent.yaml`, `transmission.yaml`, `aria2.yaml`
-- **RSS**: `freshrss.yaml`, `rsshub.yaml`
-- **Monitoring**: `monitoring.yaml` (prometheus, grafana, exporters)
-- **Network**: `nginx.yaml`, `ddns-updater.yaml`, `ddns-go.yaml`
-- **Server management**: `termix.yaml` (SSH terminal, file manager, Docker management)
+Standard: `PUID=1005`, `PGID=1005`. Exceptions:
+- `alist.yaml` — uses `PUID=0`/`PGID=0`
+- `monitoring.yaml` — also sets `user: 1005:1005`
+- `homepage.yaml` — PUID/PGID commented out
 
-## Timezone
+All services: `TZ=Asia/Shanghai`.
 
-All services configured for `TZ=Asia/Shanghai`.
+## Services
+
+| File | Services |
+|------|----------|
+| `servarr.yaml` | radarr, sonarr, jackett, bazarr, jellyseerr, flaresolverr, prowlarr, lidarr |
+| `immich.yaml` | immich-server, immich-microservices, immich-machine-learning, immich-web, typesense, redis, database, immich-proxy |
+| `monitoring.yaml` | prometheus, grafana, node-exporter, cadvisor |
+| Infrastructure | `traefik.yaml`, `nginx.yaml`, `watchtower.yaml`, `dockhand.yaml` |
+
+## Services NOT in this repo
+
+Deployed outside Portainer or elsewhere: Authentik, Jellyfin, PhotoPrism, Nextcloud, Cockpit, OpenWRT, AdGuard Home, WireGuard, Ollama.
+
+## Notes
+
+- These are Portainer stack definitions (valid docker-compose). Paste YAML into Portainer's "Add Stack" UI. Networks are `external: true` — create them first.
+- No `.gitignore`, no lockfiles, no CI/CD config. Plain YAML only.
+- `watchtower` auto-updates all containers and sends notification reports.
+- Most Traefik-routed services use labels for `traefik.enable=true`, `websecure` entrypoint, `letsencrypt` certresolver.
