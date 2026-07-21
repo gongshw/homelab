@@ -4,7 +4,6 @@ services:
     image: docker.litellm.ai/berriai/litellm-database:latest
     container_name: litellm
     restart: unless-stopped
-    command: ["--config", "/app/config/config.yaml"]
     environment:
       - LITELLM_MASTER_KEY=${LITELLM_MASTER_KEY}
       - LITELLM_SALT_KEY=${LITELLM_SALT_KEY}
