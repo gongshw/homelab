@@ -8,6 +8,7 @@ services:
       - PUID=1005
       - PGID=1005
       - TZ=Asia/Shanghai
+      - LITELLM_PROXY_MASTER_KEY=${LITELLM_PROXY_MASTER_KEY}
     volumes:
       - ${CONFIG_ROOT}/litellm:/app/config
     networks:
