@@ -1,14 +1,15 @@
 version: '3.8'
 services:
   litellm:
-    image: ghcr.io/berriai/litellm:latest
+    image: docker.litellm.ai/berriai/litellm-database:latest
     container_name: litellm
     restart: unless-stopped
     command: ["--config", "/app/config/config.yaml"]
     environment:
-      - PUID=1005
-      - PGID=1005
-      - TZ=Asia/Shanghai
+      - LITELLM_MASTER_KEY=${LITELLM_MASTER_KEY}
+      - LITELLM_SALT_KEY=${LITELLM_SALT_KEY}
+      - DATABASE_URL=postgresql://litellm:${LITELLM_DB_PASSWORD}@db:5432/litellm
+      - STORE_MODEL_IN_DB=True
     volumes:
       - ${CONFIG_ROOT}/litellm:/app/config
     networks:
@@ -19,6 +20,25 @@ services:
       - "traefik.http.routers.litellm.entrypoints=websecure"
       - "traefik.http.routers.litellm.tls.certresolver=letsencrypt"
       - "traefik.http.services.litellm.loadbalancer.server.port=4000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16
+    container_name: litellm-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: litellm
+      POSTGRES_PASSWORD: ${LITELLM_DB_PASSWORD}
+      POSTGRES_DB: litellm
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U litellm"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - ${CONFIG_ROOT}/litellm/postgres:/var/lib/postgresql/data
 
 networks:
   traefik_network:
