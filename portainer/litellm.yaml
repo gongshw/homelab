@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   litellm:
-    image: ghcr.io/berriai/litellm:main-latest
+    image: ghcr.io/berriai/litellm:latest
     container_name: litellm
     restart: unless-stopped
     environment:
