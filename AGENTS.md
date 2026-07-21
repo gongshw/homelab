@@ -26,6 +26,7 @@ Required at deploy time (set in Portainer or docker-compose env):
 - `CF_DNS_API_TOKEN` — Cloudflare API token for Traefik TLS
 - `ACME_EMAIL` — Let's Encrypt registration email
 - `WATCHTOWER_HTTP_API_TOKEN`, `WATCHTOWER_NOTIFICATION_URL`
+- `LITELLM_MASTER_KEY`, `LITELLM_SALT_KEY`, `LITELLM_DB_PASSWORD` — LiteLLM
 
 Immich uses `../stack.env` (relative to `portainer/` — sibling of repo root) for DB credentials and API keys. This file is **not in the repo**.
 
@@ -45,6 +46,7 @@ All services: `TZ=Asia/Shanghai`.
 | `servarr.yaml` | radarr, sonarr, jackett, bazarr, jellyseerr, flaresolverr, prowlarr, lidarr |
 | `immich.yaml` | immich-server, immich-microservices, immich-machine-learning, immich-web, typesense, redis, database, immich-proxy |
 | `monitoring.yaml` | prometheus, grafana, node-exporter, cadvisor |
+| `litellm.yaml` | litellm, db (Postgres) |
 | Infrastructure | `traefik.yaml`, `nginx.yaml`, `watchtower.yaml`, `dockhand.yaml` |
 
 ## Services NOT in this repo
