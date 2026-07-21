@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  litellm:
+    image: ghcr.io/berriai/litellm:main-latest
+    container_name: litellm
+    restart: unless-stopped
+    environment:
+      - PUID=1005
+      - PGID=1005
+      - TZ=Asia/Shanghai
+    volumes:
+      - ${CONFIG_ROOT}/litellm:/app/config
+    networks:
+      - nginx_network
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.litellm.rule=Host(`litellm.halfsugar.tech`)"
+      - "traefik.http.routers.litellm.entrypoints=websecure"
+      - "traefik.http.routers.litellm.tls.certresolver=letsencrypt"
+      - "traefik.http.services.litellm.loadbalancer.server.port=4000"
+
+networks:
+  nginx_network:
+    name: nginx_network
+    external: true
+  traefik_network:
+    name: traefik_network
+    external: true
