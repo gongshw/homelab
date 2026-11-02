@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+  openlist:
+    restart: unless-stopped
+    volumes:
+      - '${CONFIG_ROOT}/openlist:/opt/openlist/data'
+    environment:
+      - PUID=1005
+      - PGID=1005
+      - UMASK=022
+    container_name: openlist
+    image: 'openlistteam/openlist:latest'
+    networks:
+      - nginx_network
+      - traefik_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.openlist.rule=Host(`openlist.halfsugar.tech`)"
+      - "traefik.http.routers.openlist.entrypoints=websecure"
+      - "traefik.http.routers.openlist.tls.certresolver=letsencrypt"
+      - "traefik.http.services.openlist.loadbalancer.server.port=5244"
+
+networks:
+  traefik_network:
+    name: traefik_network
+    external: true
