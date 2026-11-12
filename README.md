@@ -47,7 +47,7 @@
 <a href="portainer/aria2.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/ariang.png" alt="Aria2" height="50" title="Aria2"></a>
 
 ## Storage
-<a href="portainer/alist.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/alist.png" alt="Alist" height="50" title="Alist"></a>
+<a href="portainer/alist.yaml"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/openlist.png" alt="Openlist" height="50" title="Openlist"></a>
 
 ## File Manager
 <a href="https://cockpit-project.org/"><img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/cockpit.png" alt="Cockpit" height="50" title="Cockpit"></a>
