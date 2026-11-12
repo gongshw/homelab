@@ -31,10 +31,10 @@ services:
         max-size: 1m
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.litellm.rule=Host(`aria2-pro.halfsugar.tech`)"
-      - "traefik.http.routers.litellm.entrypoints=websecure"
-      - "traefik.http.routers.litellm.tls.certresolver=letsencrypt"
-      - "traefik.http.services.litellm.loadbalancer.server.port=6800"
+      - "traefik.http.routers.aria2.rule=Host(`aria2-pro.halfsugar.tech`)"
+      - "traefik.http.routers.aria2.entrypoints=websecure"
+      - "traefik.http.routers.aria2.tls.certresolver=letsencrypt"
+      - "traefik.http.services.aria2.loadbalancer.server.port=6800"
 
   AriaNg:
     container_name: ariang
@@ -49,10 +49,10 @@ services:
         max-size: 1m
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.litellm.rule=Host(`aria2.halfsugar.tech`)"
-      - "traefik.http.routers.litellm.entrypoints=websecure"
-      - "traefik.http.routers.litellm.tls.certresolver=letsencrypt"
-      - "traefik.http.services.litellm.loadbalancer.server.port=6880"
+      - "traefik.http.routers.ariang.rule=Host(`aria2.halfsugar.tech`)"
+      - "traefik.http.routers.ariang.entrypoints=websecure"
+      - "traefik.http.routers.ariang.tls.certresolver=letsencrypt"
+      - "traefik.http.services.ariang.loadbalancer.server.port=6880"
 
 networks:
   traefik_network:
