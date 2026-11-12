@@ -55,6 +55,6 @@ services:
       - "traefik.http.services.litellm.loadbalancer.server.port=6880"
 
 networks:
-  nginx_network:
+  traefik_network:
     name: traefik_network
     external: true
