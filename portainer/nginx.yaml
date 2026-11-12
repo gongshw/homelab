@@ -10,12 +10,6 @@ services:
     networks:
       - nginx_network
       - traefik_network
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.nginx.rule=Host(`portainer.halfsugar.tech`)"
-      - "traefik.http.routers.nginx.entrypoints=websecure"
-      - "traefik.http.routers.nginx.tls.certresolver=letsencrypt"
-      - "traefik.http.services.nginx.loadbalancer.server.port=9443"
     volumes:
       - ${CONFIG_ROOT}/nginx-proxy-manager/data:/data
       - ${CONFIG_ROOT}/nginx-proxy-manager/letsencrypt:/etc/letsencrypt
